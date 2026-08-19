@@ -68,18 +68,3 @@ The project is built with plain HTML/CSS/JavaScript and requires no additional i
 ---
 
 **↑ [Наверх / Back to top](#)**
-
----
-
-### 📄 Лицензия / License
-
-Проект распространяется под лицензией **MIT**. Вы можете свободно использовать, изменять и распространять код при условии сохранения уведомления об авторских правах.
-
-The project is distributed under the **MIT** license. You may freely use, modify, and distribute the code provided that the copyright notice is retained.
-
----
-
-### 🔗 Исходный код / Source Code
-
-Репозиторий доступен по адресу:  
-[https://github.com/zolotovvladislav323-crypto/Fitness.appgames/tree/main](https://github.com/zolotovvladislav323-crypto/Fitness.appgames/tree/main)
