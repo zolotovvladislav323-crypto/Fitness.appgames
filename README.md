@@ -6,9 +6,9 @@
 </div>
 
 <div align="center">
-  <a href="#ru"><img src="https://img.shields.io/badge/Русский-🇷🇺-blue?style=flat-square" alt="Русский"></a>
-  <a href="#en"><img src="https://img.shields.io/badge/English-🇬🇧-blue?style=flat-square" alt="English"></a>
-  <a href="#zh"><img src="https://img.shields.io/badge/中文-🇨🇳-blue?style=flat-square" alt="中文"></a>
+  <a href="#ru"><img src="https://img.shields.io/badge/Русский-blue?style=flat-square" alt="Русский"></a>
+  <a href="#en"><img src="https://img.shields.io/badge/English-blue?style=flat-square" alt="English"></a>
+  <a href="#zh"><img src="https://img.shields.io/badge/中文-blue?style=flat-square" alt="中文"></a>
 </div>
 
 ---
@@ -81,17 +81,36 @@ The project is distributed under the **MIT** license. You may freely use, modify
 
 ### 🔗 Исходный код / Source Code
 
-Репозиторий доступен по адресу: [https://github.com/your-username/pushup-tracker](https://github.com/your-username/pushup-tracker)  
-_(замените ссылку на актуальную)_
+Репозиторий доступен по адресу:  
+[https://github.com/zolotovvladislav323-crypto/Fitness.appgames/tree/main](https://github.com/zolotovvladislav323-crypto/Fitness.appgames/tree/main)
 
 ---
 
-### 🙏 Благодарности / Acknowledgements
+### 🎨 Логотип
 
-- [MediaPipe](https://mediapipe.dev/) — за мощные модели компьютерного зрения.
-- [Camera Utils](https://www.npmjs.com/package/@mediapipe/camera_utils) — за удобный доступ к камере.
+В качестве логотипа предлагается использовать минималистичный значок в стиле fitness/tech:
 
----
+- **Иконка:** стилизованный силуэт человека в планке (упор лёжа) с наложенными точками суставов (плечо, локоть, запястье), соединёнными линиями — отсылка к MediaPipe Pose.
+- **Цвета:** неоново-зелёный (`#00ff88`) на тёмном фоне — в фирменном стиле приложения.
+- **Формат:** SVG или PNG 128×128 px.
 
-*Если вам понравился проект, поставьте ⭐ на GitHub!*  
-*If you like this project, give it a ⭐ on GitHub!*
+Пример SVG-кода для логотипа (сохраните как `assets/logo.svg`):
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="24" fill="#0d0d0d"/>
+  <circle cx="64" cy="64" r="48" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.15"/>
+  <!-- Плечо -->
+  <circle cx="44" cy="44" r="5" fill="#00ff88"/>
+  <!-- Локоть -->
+  <circle cx="68" cy="64" r="5" fill="#00ff88"/>
+  <!-- Запястье -->
+  <circle cx="92" cy="44" r="5" fill="#00ff88"/>
+  <!-- Соединения -->
+  <line x1="44" y1="44" x2="68" y2="64" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
+  <line x1="68" y1="64" x2="92" y2="44" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
+  <!-- Точки-суставы (дополнительно) -->
+  <circle cx="44" cy="44" r="2" fill="#0d0d0d"/>
+  <circle cx="68" cy="64" r="2" fill="#0d0d0d"/>
+  <circle cx="92" cy="44" r="2" fill="#0d0d0d"/>
+</svg>
