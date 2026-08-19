@@ -1,17 +1,87 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <rect width="128" height="128" rx="24" fill="#0d0d0d"/>
-  <circle cx="64" cy="64" r="48" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.15"/>
+  <defs>
+    <!-- Градиент для фона -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <!-- Свечение для линий -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Свечение для суставов (более сильное) -->
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Фон с закруглением -->
+  <rect width="128" height="128" rx="24" fill="url(#bgGrad)"/>
+
+  <!-- Внешняя окружность-орбита (с анимацией вращения) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 64 64" to="360 64 64" dur="20s" repeatCount="indefinite"/>
+    <circle cx="64" cy="64" r="48" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.2" stroke-dasharray="4 8"/>
+    <circle cx="64" cy="64" r="48" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.1"/>
+  </g>
+
+  <!-- Линии руки с фильтром свечения -->
+  <g filter="url(#glow)">
+    <line x1="44" y1="44" x2="68" y2="64" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="68" y1="64" x2="92" y2="44" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Суставы (каждый с анимированной пульсацией) -->
   <!-- Плечо -->
-  <circle cx="44" cy="44" r="5" fill="#00ff88"/>
+  <g>
+    <circle cx="44" cy="44" r="7" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="7;8;7" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="44" cy="44" r="4" fill="#00ff88" filter="url(#glowStrong)">
+      <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="44" cy="44" r="1.5" fill="#0d0d0d"/>
+  </g>
+
   <!-- Локоть -->
-  <circle cx="68" cy="64" r="5" fill="#00ff88"/>
+  <g>
+    <circle cx="68" cy="64" r="7" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="7;8;7" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="68" cy="64" r="4" fill="#00ff88" filter="url(#glowStrong)">
+      <animate attributeName="r" values="4;5;4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="68" cy="64" r="1.5" fill="#0d0d0d"/>
+  </g>
+
   <!-- Запястье -->
-  <circle cx="92" cy="44" r="5" fill="#00ff88"/>
-  <!-- Соединения -->
-  <line x1="44" y1="44" x2="68" y2="64" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
-  <line x1="68" y1="64" x2="92" y2="44" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
-  <!-- Точки-суставы (дополнительно) -->
-  <circle cx="44" cy="44" r="2" fill="#0d0d0d"/>
-  <circle cx="68" cy="64" r="2" fill="#0d0d0d"/>
-  <circle cx="92" cy="44" r="2" fill="#0d0d0d"/>
+  <g>
+    <circle cx="92" cy="44" r="7" fill="none" stroke="#00ff88" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="7;8;7" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="92" cy="44" r="4" fill="#00ff88" filter="url(#glowStrong)">
+      <animate attributeName="r" values="4;5;4" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="92" cy="44" r="1.5" fill="#0d0d0d"/>
+  </g>
+
+  <!-- Декоративные мелкие точки вдоль линий (для стиля) -->
+  <circle cx="56" cy="54" r="1" fill="#00ff88" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="80" cy="54" r="1" fill="#00ff88" opacity="0.4">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
 </svg>
